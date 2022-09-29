@@ -22,6 +22,11 @@
         {
             SeatStatus = seatStatus;
         }
+
+        public string RetrieveRowCol()
+        {
+            return $"{Row}{Col}";
+        }
     }
 }
 
