@@ -29,6 +29,6 @@ public class UserInterfaceTests
         _userInterface.DisEmptySeats(seats);
 
         var output = stringWriter.ToString();
-        Assert.That(output, Is.EqualTo("\nThe Mars Rover coordinates and facing are:\nMars Rover - MR0: 2 1 E\n\n"));
+        Assert.That(output, Is.EqualTo("Remaining seats are:\nC4\nC5\n"));
     }
 }

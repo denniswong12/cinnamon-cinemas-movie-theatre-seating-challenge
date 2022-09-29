@@ -17,11 +17,9 @@
 
         public void DisEmptySeats(List<Seat> seats)
         {
+            Console.WriteLine($"Remaining seats are:");
             for (int i=0; i<seats.Count(); i++)
-            {
-                Console.WriteLine($"Remaining seats are: ");
                 Console.WriteLine($"{seats[i].RetrieveRowCol()}");
-            }
         }
     }
 }
