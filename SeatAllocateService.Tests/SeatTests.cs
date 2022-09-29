@@ -11,7 +11,7 @@ public class SeatTestsReservationCenterTests
     }
 
     [Test]
-    public void Test1()
+    public void Call_RetrieveSeatStatus_Should_Return_Seats_Status()
     {
         _seat.RetrieveSeatStatus().Should().Be('A');
     }
@@ -21,5 +21,11 @@ public class SeatTestsReservationCenterTests
     {
         _seat.UpdateSeatStatus('R');
         _seat.RetrieveSeatStatus().Should().Be('R');
+    }
+
+    [Test]
+    public void Call_RetrieveRowCol_Should_Return_Seats_Row_And_Col()
+    {
+        _seat.RetrieveRowCol().Should().Be("A1");
     }
 }

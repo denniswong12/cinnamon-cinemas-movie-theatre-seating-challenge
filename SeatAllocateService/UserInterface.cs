@@ -14,6 +14,15 @@
             NumSeatsNeeded = rnd.Next(1, 4);
             return NumSeatsNeeded;
         }
+
+        public void DisEmptySeats(List<Seat> seats)
+        {
+            for (int i=0; i<seats.Count(); i++)
+            {
+                Console.WriteLine($"Remaining seats are: ");
+                Console.WriteLine($"{seats[i].RetrieveRowCol()}");
+            }
+        }
     }
 }
 
