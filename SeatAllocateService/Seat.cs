@@ -17,6 +17,11 @@
         {
             return SeatStatus;
         }
+
+        public void UpdateSeatStatus(char seatStatus)
+        {
+            SeatStatus = seatStatus;
+        }
     }
 }
 
