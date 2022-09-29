@@ -11,9 +11,8 @@
         public int AskNumSeatsNeeded()
         {
             Random rnd = new Random();
-            var numSeatsNeeded = rnd.Next(1, 4);
-            NumSeatsNeeded = numSeatsNeeded;
-            return numSeatsNeeded;
+            NumSeatsNeeded = rnd.Next(1, 4);
+            return NumSeatsNeeded;
         }
     }
 }
