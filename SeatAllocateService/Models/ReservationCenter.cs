@@ -29,9 +29,13 @@
             foreach (var rowID in RowIDs)
                 for (int i=0; i<_maxCol; i++)
                     _seats.Add(new Seat(rowID.Value, i+1, SeatStatus.ElementAt(0).Value));
+        }
 
-            //foreach (var aa in _seats)
-            //    Console.WriteLine(aa.RetrieveRowCol());
+        public int GetNumOfSeatsNeeded()
+        {
+            UserInterface userInterface = new UserInterface();
+
+            return userInterface.AskNumSeatsNeeded();
         }
     }
 }
