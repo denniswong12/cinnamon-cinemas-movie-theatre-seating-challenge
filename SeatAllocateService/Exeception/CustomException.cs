@@ -1,11 +1,14 @@
 ﻿using System;
 namespace SeatAllocateService
 {
-    public class CustomException
+    [Serializable]
+    public class NotEnoughEmptySeatException : Exception
     {
-        public CustomException()
-        {
-        }
+        public NotEnoughEmptySeatException()
+        { }
+
+        public NotEnoughEmptySeatException(string message)
+            : base(message)
+        { }
     }
 }
-

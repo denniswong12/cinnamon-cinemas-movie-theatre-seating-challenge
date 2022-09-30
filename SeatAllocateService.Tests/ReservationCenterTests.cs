@@ -35,8 +35,8 @@ public class ReservationCenterTests
     [Test]
     public void Call_AllocateAllSeat_Should_Change_Seats_Status_To_Reserved()
     {
-        Seat seat = new Seat('C', 3, 'A');
+        _reservationCenter.InitHall();
         _reservationCenter.AllocateAllSeat();
-        seat.RetrieveSeatStatus().Should().Be('R');
+        Assert.That(_reservationCenter.FindLastAllocatedSeat(), Is.GreaterThan(12));
     }
 }

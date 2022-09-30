@@ -31,4 +31,5 @@ public class UserInterfaceTests
         var output = stringWriter.ToString();
         Assert.That(output, Is.EqualTo("Remaining seats are:\nC4\nC5\n"));
     }
+
 }
