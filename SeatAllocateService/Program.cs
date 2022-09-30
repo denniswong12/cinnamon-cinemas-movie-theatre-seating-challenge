@@ -1,5 +1,4 @@
-﻿namespace SeatAllocateService;
-public class Class1
-{
+﻿using SeatAllocateService;
 
-}
+var reservationCenter = new ReservationCenter();
+reservationCenter.InitHall();
