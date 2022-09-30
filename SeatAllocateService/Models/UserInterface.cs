@@ -2,7 +2,7 @@
 {
     public class UserInterface
     {
-        protected int NumSeatsNeeded { get; private set; }
+        private int _numSeatsNeeded;
 
         public UserInterface()
         {
@@ -11,8 +11,8 @@
         public int AskNumSeatsNeeded()
         {
             Random rnd = new Random();
-            NumSeatsNeeded = rnd.Next(1, 4);
-            return NumSeatsNeeded;
+            _numSeatsNeeded = rnd.Next(1, 4);
+            return _numSeatsNeeded;
         }
 
         public void DisEmptySeats(List<Seat> seats)
