@@ -87,8 +87,11 @@
                     break;
                 }
             }
+
             if (!notEnoughEmptySeats)
+            {
                 userInterface.DisMessage("All seats have been allocated.");
+            }
             else
             {
                 string allocatedSeats = "Allocated seats are:\n";
