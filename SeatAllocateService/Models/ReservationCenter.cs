@@ -36,6 +36,11 @@
             UserInterface userInterface = new UserInterface();
             return userInterface.AskNumSeatsNeeded();
         }
+
+        public void AllocateOneSeat(Seat seat, char seatStatus)
+        {
+            seat.UpdateSeatStatus(seatStatus);
+        }
     }
 }
 
