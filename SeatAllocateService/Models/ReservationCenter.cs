@@ -34,7 +34,6 @@
         public int GetNumOfSeatsNeeded()
         {
             UserInterface userInterface = new UserInterface();
-
             return userInterface.AskNumSeatsNeeded();
         }
     }

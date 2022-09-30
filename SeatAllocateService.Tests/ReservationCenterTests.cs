@@ -23,4 +23,12 @@ public class ReservationCenterTests
         int numSeatsNeeded = _reservationCenter.GetNumOfSeatsNeeded();
         Assert.IsTrue(numSeatsNeeded.Equals(1) || numSeatsNeeded.Equals(2) || numSeatsNeeded.Equals(3));
     }
+
+    [Test]
+    public void Call_AllocateOneSeat_Should_Change_Seat_Status_To_Reserved()
+    {
+        Seat seat = new Seat('B', 3, 'A');
+        _reservationCenter.AllocateOneSeat(seat);
+        seat.RetrieveSeatStatus().Should().Be('R');
+    }
 }
