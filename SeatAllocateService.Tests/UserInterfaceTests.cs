@@ -41,6 +41,6 @@ public class UserInterfaceTests
         _userInterface.DisMessage("Testing Message");
 
         var output = stringWriter.ToString();
-        Assert.That(output, Is.EqualTo("Testing Message"));
+        Assert.That(output, Is.EqualTo("Testing Message\n"));
     }
 }

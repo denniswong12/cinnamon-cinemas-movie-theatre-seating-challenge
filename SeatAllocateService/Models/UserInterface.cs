@@ -21,6 +21,11 @@
             foreach (Seat seat in seats)
                 Console.WriteLine($"{seat.RetrieveRowCol()}");
         }
+
+        public void DisMessage(string disMsg)
+        {
+            Console.WriteLine(disMsg);
+        }
     }
 }
 
