@@ -75,20 +75,15 @@
                 try
                 {
                     if (notEnoughEmptySeats)
-                    {
-                        string remainingSeats = "Not enough seats to allocate, remaining seat(s):\n";
-
-                        foreach (var seat in _seats)
-                            if(seat.RetrieveSeatStatus() == _seatStatus.ElementAt(0).Value)
-                                remainingSeats += $"{seat.RetrieveRowCol()}\n";
-
-                        throw new NotEnoughEmptySeatException(remainingSeats);
-                    }
-                        
+                        throw new NotEnoughEmptySeatException();
                 }
                 catch (NotEnoughEmptySeatException ex)
                 {
-                    userInterface.DisMessage(ex.Message);
+                    List<Seat> remainingSeats = new List<Seat>();
+                    foreach (var seat in _seats)
+                        if (seat.RetrieveSeatStatus() == _seatStatus.ElementAt(0).Value)
+                            remainingSeats.Add(seat);
+                    userInterface.DisEmptySeats(remainingSeats);
                     break;
                 }
             }

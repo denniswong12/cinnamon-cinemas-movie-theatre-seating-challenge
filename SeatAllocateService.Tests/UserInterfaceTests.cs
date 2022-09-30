@@ -29,7 +29,7 @@ public class UserInterfaceTests
         _userInterface.DisEmptySeats(seats);
 
         var output = stringWriter.ToString();
-        Assert.That(output, Is.EqualTo("Remaining seats are:\nC4\nC5\n"));
+        Assert.That(output, Is.EqualTo("Not enough seats to allocate, remaining seat(s):\nC4\nC5\n"));
     }
 
     [Test]

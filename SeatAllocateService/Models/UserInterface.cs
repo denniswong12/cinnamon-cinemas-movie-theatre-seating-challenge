@@ -17,7 +17,7 @@
 
         public void DisEmptySeats(List<Seat> seats)
         {
-            Console.WriteLine($"Remaining seats are:");
+            Console.WriteLine($"Not enough seats to allocate, remaining seat(s):");
             foreach (Seat seat in seats)
                 Console.WriteLine($"{seat.RetrieveRowCol()}");
         }
