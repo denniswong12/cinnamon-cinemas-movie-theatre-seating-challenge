@@ -32,4 +32,15 @@ public class UserInterfaceTests
         Assert.That(output, Is.EqualTo("Remaining seats are:\nC4\nC5\n"));
     }
 
+    [Test]
+    public void Passing_String_To_DisMessage_Should_Print_The_Input_String_To_Console()
+    {
+        var stringWriter = new StringWriter();
+        Console.SetOut(stringWriter);
+
+        _userInterface.DisMessage("Testing Message");
+
+        var output = stringWriter.ToString();
+        Assert.That(output, Is.EqualTo("Testing Message"));
+    }
 }
