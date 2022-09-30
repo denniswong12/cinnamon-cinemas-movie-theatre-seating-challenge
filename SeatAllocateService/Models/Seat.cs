@@ -2,30 +2,30 @@
 {
     public class Seat
     {
-        protected char Row;
-        protected int Col;
-        protected char SeatStatus;
+        private char _row;
+        private int _col;
+        private char _seatStatus;
 
         public Seat(char row, int col, char seatStatus)
         {
-            Row = row;
-            Col = col;
-            SeatStatus = seatStatus;
+            _row = row;
+            _col = col;
+            _seatStatus = seatStatus;
         }
 
         public char RetrieveSeatStatus()
         {
-            return SeatStatus;
+            return _seatStatus;
         }
 
         public void UpdateSeatStatus(char seatStatus)
         {
-            SeatStatus = seatStatus;
+            _seatStatus = seatStatus;
         }
 
         public string RetrieveRowCol()
         {
-            return $"{Row}{Col}";
+            return $"{_row}{_col}";
         }
     }
 }
