@@ -28,4 +28,11 @@ public class SeatTestsReservationCenterTests
     {
         _seat.RetrieveRowCol().Should().Be("A1");
     }
+
+    [Test]
+    public void Call_UpdateSeatCustomerName_Should_Change_Customer_Name()
+    {
+        _seat.UpdateSeatCustomerName('Dennis');
+        _seat.RetrieveCustomerName().Should().Be('Dennis');
+    }
 }

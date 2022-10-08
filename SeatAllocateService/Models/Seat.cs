@@ -5,6 +5,7 @@
         private char _row;
         private int _col;
         private char _seatStatus;
+        private string _customerName;
 
         public Seat(char row, int col, char seatStatus)
         {
@@ -26,6 +27,11 @@
         public string RetrieveRowCol()
         {
             return $"{_row}{_col}";
+        }
+
+        public void UpdateSeatCustomerName(string customerName)
+        {
+            _customerName = customerName;
         }
     }
 }

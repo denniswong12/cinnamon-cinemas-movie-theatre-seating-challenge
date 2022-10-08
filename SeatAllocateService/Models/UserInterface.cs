@@ -10,6 +10,7 @@
 
         public int AskNumSeatsNeeded()
         {
+            //ask user to input no. of seats wanted and name
             Random rnd = new Random();
             _numSeatsNeeded = rnd.Next(1, 4);
             return _numSeatsNeeded;
