@@ -13,6 +13,7 @@ public class UserInterfaceTests
     [Test]
     public void Calling_AskNumSeatsNeeded_Should_Return_An_Int_Between_1_And_3()
     {
+        Console.SetIn(new StringReader("1"));
         int numSeatNeeded = _userInterface.AskNumSeatsNeeded();
         Assert.IsTrue(numSeatNeeded.Equals(1) || numSeatNeeded.Equals(2) || numSeatNeeded.Equals(3));
     }
@@ -47,8 +48,8 @@ public class UserInterfaceTests
     [Test]
     public void Ask_User_Name_Should_Return_Customers_Name()
     {
-        var customerName = _userInterface.AskCustomerName();
         Console.SetIn(new StringReader("Dennis"));
+        var customerName = _userInterface.AskCustomerName();
         Assert.That(customerName, Is.EqualTo("Dennis"));
     }
 }

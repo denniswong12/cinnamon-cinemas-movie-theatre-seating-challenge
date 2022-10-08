@@ -33,6 +33,11 @@
         {
             _customerName = customerName;
         }
+
+        public string RetrieveCustomerName()
+        {
+            return _customerName;
+        }
     }
 }
 

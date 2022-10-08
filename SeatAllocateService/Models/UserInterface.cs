@@ -10,10 +10,15 @@
 
         public int AskNumSeatsNeeded()
         {
-            //ask user to input no. of seats wanted and name
-            Random rnd = new Random();
-            _numSeatsNeeded = rnd.Next(1, 4);
-            return _numSeatsNeeded;
+            Console.WriteLine("How many seats do you want to reserve? (1-3 seats)");
+            var _numSeatsNeeded = Console.ReadLine();
+            return Int32.Parse(_numSeatsNeeded);
+        }
+
+        public string AskCustomerName()
+        {
+            Console.WriteLine("May I know who is reserving the seat?");
+            return Console.ReadLine();
         }
 
         public void DisEmptySeats(List<Seat> seats)
@@ -29,4 +34,3 @@
         }
     }
 }
-
