@@ -43,4 +43,12 @@ public class UserInterfaceTests
         var output = stringWriter.ToString();
         Assert.That(output, Is.EqualTo("Testing Message\n"));
     }
+
+    [Test]
+    public void Ask_User_Name_Should_Return_Customers_Name()
+    {
+        var customerName = _userInterface.AskCustomerName();
+        Console.SetIn(new StringReader("Dennis"));
+        Assert.That(customerName, Is.EqualTo("Dennis"));
+    }
 }
