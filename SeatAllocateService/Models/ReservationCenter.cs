@@ -69,7 +69,7 @@
 
             if (!notEnoughEmptySeats)
             {
-                string allAllocated = "\n\nAll seats have been allocated. The allocated seats are:\n";
+                string allAllocated = "\nAll seats have been allocated. The allocated seats are:\n";
                 foreach (var seat in _seats)
                     if (seat.RetrieveSeatStatus() == _seatStatus.ElementAt(1).Value)
                         allAllocated += $"{seat.RetrieveRowCol()} for {seat.RetrieveCustomerName()}\n";
@@ -77,7 +77,7 @@
             }
             else
             {
-                string allocatedSeats = "\n\nAllocated seats are:\n";
+                string allocatedSeats = "\nAllocated seats are:\n";
                 foreach (var seat in _seats)
                     if (seat.RetrieveSeatStatus() == _seatStatus.ElementAt(1).Value)
                         allocatedSeats += $"{seat.RetrieveRowCol()} for {seat.RetrieveCustomerName()}\n";
