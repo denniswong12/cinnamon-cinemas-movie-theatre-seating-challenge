@@ -2,17 +2,21 @@
 {
     public class UserInterface
     {
-        private int _numSeatsNeeded;
-
         public UserInterface()
         {
         }
 
         public int AskNumSeatsNeeded()
         {
-            Console.WriteLine("How many seats do you want to reserve? (1-3 seats)");
-            var _numSeatsNeeded = Console.ReadLine();
-            return Int32.Parse(_numSeatsNeeded);
+            var validationCenter = new ValidationCenter();
+            string numSeatsNeeded = "";
+
+            while (!validationCenter.CheckUserInputNumber(numSeatsNeeded, 1, 3))
+            {
+                Console.WriteLine("How many seats do you want to reserve? (1-3 seats)");
+                numSeatsNeeded = Console.ReadLine();
+            }
+            return Int32.Parse(numSeatsNeeded);
         }
 
         public string AskCustomerName()
