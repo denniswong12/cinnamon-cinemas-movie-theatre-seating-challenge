@@ -36,9 +36,15 @@
             return userInterface.AskNumSeatsNeeded();
         }
 
-        public void AllocateOneSeat(Seat seat, char seatStatus)
+        public string GetCustomerName()
         {
-            seat.UpdateSeatStatus(seatStatus);
+            UserInterface userInterface = new UserInterface();
+            return userInterface.AskCustomerName();
+        }
+
+        public void AllocateOneSeat(Seat seat, char seatStatus, string customerName)
+        {
+            seat.UpdateSeatStatus(seatStatus, customerName);
         }
 
         public int FindLastAllocatedSeat()
@@ -55,19 +61,21 @@
         public void AllocateAllSeat()
         {
             int numSeatsNeeded = 0;
+            string customerName = "";
             int lastAllocatedSeat = FindLastAllocatedSeat();
             bool notEnoughEmptySeats = false;
             UserInterface userInterface = new UserInterface();
 
             while (_seats[_seats.Count() - 1].RetrieveSeatStatus() == _seatStatus.ElementAt(0).Value)
             {
+                customerName = GetCustomerName();
                 numSeatsNeeded = GetNumOfSeatsNeeded();
                 lastAllocatedSeat = FindLastAllocatedSeat();
 
                 for (int i = lastAllocatedSeat; i < numSeatsNeeded + lastAllocatedSeat; i++)
                 {
                     if (_seats.Count() - lastAllocatedSeat - numSeatsNeeded >= 0)
-                        AllocateOneSeat(_seats[i], _seatStatus.ElementAt(1).Value);
+                        AllocateOneSeat(_seats[i], _seatStatus.ElementAt(1).Value, customerName);
                     else
                         notEnoughEmptySeats = true;
                 }
@@ -90,14 +98,18 @@
 
             if (!notEnoughEmptySeats)
             {
-                userInterface.DisMessage("All seats have been allocated.");
+                string allAllocated = "\nAll seats have been allocated. The allocated seats are:\n";
+                foreach (var seat in _seats)
+                    if (seat.RetrieveSeatStatus() == _seatStatus.ElementAt(1).Value)
+                        allAllocated += $"{seat.RetrieveRowCol()} for {seat.RetrieveCustomerName()}\n";
+                userInterface.DisMessage(allAllocated);
             }
             else
             {
-                string allocatedSeats = "Allocated seats are:\n";
+                string allocatedSeats = "\nAllocated seats are:\n";
                 foreach (var seat in _seats)
                     if (seat.RetrieveSeatStatus() == _seatStatus.ElementAt(1).Value)
-                        allocatedSeats += $"{seat.RetrieveRowCol()}\n";
+                        allocatedSeats += $"{seat.RetrieveRowCol()} for {seat.RetrieveCustomerName()}\n";
                 userInterface.DisMessage(allocatedSeats);
             }
         }

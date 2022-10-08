@@ -19,9 +19,10 @@
             return _seatStatus;
         }
 
-        public void UpdateSeatStatus(char seatStatus)
+        public void UpdateSeatStatus(char seatStatus, string customerName)
         {
             _seatStatus = seatStatus;
+            _customerName = customerName;
         }
 
         public string RetrieveRowCol()

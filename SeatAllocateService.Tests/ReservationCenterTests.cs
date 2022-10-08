@@ -30,7 +30,7 @@ public class ReservationCenterTests
     public void Call_AllocateOneSeat_Should_Change_Seat_Status_To_Reserved()
     {
         Seat seat = new Seat('B', 3, 'A');
-        _reservationCenter.AllocateOneSeat(seat, 'R');
+        _reservationCenter.AllocateOneSeat(seat, 'R', "Dennis");
         seat.RetrieveSeatStatus().Should().Be('R');
     }
 

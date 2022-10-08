@@ -19,7 +19,7 @@ public class SeatTestsReservationCenterTests
     [Test]
     public void Update_Seat_Status_To_Reserved_Should_Change_Status_To_Reserved()
     {
-        _seat.UpdateSeatStatus('R');
+        _seat.UpdateSeatStatus('R', "Dennis");
         _seat.RetrieveSeatStatus().Should().Be('R');
     }
 
