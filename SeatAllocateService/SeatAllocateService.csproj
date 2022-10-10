@@ -11,10 +11,12 @@
     <None Remove="Models\" />
     <None Remove="Validate\" />
     <None Remove="Exeception\" />
+    <None Remove="View\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Validate\" />
     <Folder Include="Exeception\" />
+    <Folder Include="View\" />
   </ItemGroup>
 </Project>
